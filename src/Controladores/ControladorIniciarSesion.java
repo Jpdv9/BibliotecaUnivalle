@@ -6,7 +6,9 @@ import Views.VistaIniciarSesion;
 import Views.VistaMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -20,7 +22,7 @@ public class ControladorIniciarSesion implements ActionListener {
         this.view= view;
         this.Model= Model;
         this.view.btnEntrar.addActionListener(this);
-        
+        view.txtContraseña.addActionListener(this);
         
         
     }
@@ -30,16 +32,17 @@ public class ControladorIniciarSesion implements ActionListener {
         
     }
     public void actionPerformed(    ActionEvent e) {
-        
-        Model.setContraseña(view.txtContraseña.getText());
-        Model.setUsuario(view.txtUsuario.getText());
-        if ("MVC2023".equals(Model.getContraseña())){
-            VistaMenu vistamenu = new VistaMenu();
-            vistamenu.setVisible(true);
-            view.dispose();
-        } else {
-                 JOptionPane.showMessageDialog(null,"Contraseña Incorrecta", 
-                    "Advertencia", JOptionPane.ERROR_MESSAGE);
+        if (e.getSource() == view.btnEntrar || e.getSource() == view.txtContraseña) {
+            Model.setContraseña(view.txtContraseña.getText());
+            Model.setUsuario(view.txtUsuario.getText());
+            
+            if ("MVC2023".equals(Model.getContraseña())) {
+                VistaMenu vistamenu = new VistaMenu();
+                vistamenu.setVisible(true);
+                view.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Contraseña Incorrecta", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
