@@ -2,8 +2,6 @@
 package Modelos;
 
 import Controladores.ControladorIniciarSesion;
-import Repositorio.ImplementacionIniciarSesionDAO;
-import Repositorio.InterfaceIniciarSesionDAO;
 import Views.VistaIniciarSesion;
 
 
@@ -19,9 +17,8 @@ public class Main {
 
         VistaIniciarSesion view = new VistaIniciarSesion ( );
         
-        ModeloIniciarSesion model = new ModeloIniciarSesion("Usuario", "Contraseña");
-        InterfaceIniciarSesionDAO daoAministrador = new ImplementacionIniciarSesionDAO();
-        ControladorIniciarSesion ctrl = new ControladorIniciarSesion (view,model, daoAministrador);
+        ModeloIniciarSesion model = new ModeloIniciarSesion();
+        ControladorIniciarSesion ctrl = new ControladorIniciarSesion (view,model);
         ctrl.iniciar();
         view.setVisible(true);
     }

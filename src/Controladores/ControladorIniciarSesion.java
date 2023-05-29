@@ -2,12 +2,13 @@
 package Controladores;
 
 import Modelos.ModeloIniciarSesion;
-import Repositorio.InterfaceIniciarSesionDAO;
 import Views.VistaIniciarSesion;
 import Views.VistaMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -16,32 +17,26 @@ import javax.swing.JOptionPane;
 public class ControladorIniciarSesion implements ActionListener {
     private VistaIniciarSesion view;
     private ModeloIniciarSesion Model;
-    private InterfaceIniciarSesionDAO administradorDAO;
-
     
-
-    public ControladorIniciarSesion (VistaIniciarSesion view , ModeloIniciarSesion Model, InterfaceIniciarSesionDAO administradorDAO) {
+    public ControladorIniciarSesion (VistaIniciarSesion view , ModeloIniciarSesion Model) {
         this.view= view;
         this.Model= Model;
-        this.administradorDAO = administradorDAO;
-
         this.view.btnEntrar.addActionListener(this);
         view.txtContraseña.addActionListener(this);
+        
+        
     }
-
     public void iniciar() {
         view.setTitle("LOGIN");
         view.setLocationRelativeTo(null);
+        
     }
-
     public void actionPerformed(    ActionEvent e) {
         if (e.getSource() == view.btnEntrar || e.getSource() == view.txtContraseña) {
             Model.setContraseña(view.txtContraseña.getText());
             Model.setUsuario(view.txtUsuario.getText());
             
-            ModeloIniciarSesion administrador = administradorDAO.getAdministrador(Model.getUsuario());
-            
-            if(administrador != null && administrador.getContraseña().equals(Model.getContraseña())){
+            if ("MVC2023".equals(Model.getContraseña())) {
                 VistaMenu vistamenu = new VistaMenu();
                 vistamenu.setVisible(true);
                 view.dispose();

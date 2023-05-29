@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 
 
 class Fondo extends JPanel{
-        ImageIcon imagen;
-        String nombre;
+         ImageIcon imagen;
+         String nombre;
     public  Fondo(String nombre){
         this.nombre = nombre;
-    }
+     }
     @Override
     public void paint(Graphics g){
 

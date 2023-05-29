@@ -8,11 +8,6 @@ package Modelos;
 public class ModeloIniciarSesion {
     private String Usuario;
     private String Contraseña;
-
-    public ModeloIniciarSesion(String usuario, String contraseña){
-        this.Usuario = usuario;
-        this.Contraseña = contraseña;
-    }
     
     public String getUsuario() {
         return Usuario;
