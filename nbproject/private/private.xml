@@ -5,15 +5,19 @@
         <group>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorIniciarSesion.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaIniciarSesion.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Repositorio/ImplementacionIniciarSesionDAO.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorMenu.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaUsuarios.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Repositorio/InterfaceIniciarSesionDAO.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/ModeloUsuarios.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/69e2f929857dad2286e32a89963d131f.jpg</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaMenu.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorUsuarios.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/Fondo.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/FondoIniciarSesion.jpg</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaPrestamos.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaRecursos.java</file>
-            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/FondoIniciarSesion.jpg</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/FondoMenu.png</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/ModeloIniciarSesion.java</file>
             <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/Main.java</file>
         </group>
