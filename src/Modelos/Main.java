@@ -1,9 +1,9 @@
 
-package Collecciones;
+package Modelos;
 
-import Controladores.ControladorUsuarios;
+import Controladores.ControladorIniciarSesion;
 import Views.VistaIniciarSesion;
-import Views.VistaUsuarios;
+
 
 /**
  *
@@ -15,9 +15,10 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        VistaUsuarios view = new VistaUsuarios ( );
+        VistaIniciarSesion view = new VistaIniciarSesion ( );
         
-        ControladorUsuarios ctrl = new ControladorUsuarios (view);
+        ModeloIniciarSesion model = new ModeloIniciarSesion();
+        ControladorIniciarSesion ctrl = new ControladorIniciarSesion (view,model);
         ctrl.iniciar();
         view.setVisible(true);
     }
