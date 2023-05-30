@@ -34,7 +34,7 @@ public class ControladorMenu implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnUsuarios){
             VistaUsuarios vistaUsuarios = new VistaUsuarios();
-            ModeloUsuarios modeloUsuarios = new ModeloUsuarios("Nombre", "Dependecia", "Estamento", "0000");
+            ModeloUsuarios modeloUsuarios = new ModeloUsuarios("Nombre", "Dependecia", "Estamento", 0000);
             InterfaceUsuariosDAO interfaceUsuariosDAO = new ImplemetacionUsuariosDAO();
             ControladorUsuarios controladorUsuarios = new ControladorUsuarios(vistaUsuarios, modeloUsuarios, interfaceUsuariosDAO);
             controladorUsuarios.iniciar();

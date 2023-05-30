@@ -15,15 +15,15 @@ public class ImplemetacionUsuariosDAO implements InterfaceUsuariosDAO {
 
     @Override
     public List<ModeloUsuarios> usuarios() {
-        System.out.println(todosLosUsuarios);
     
         return todosLosUsuarios;
         
     }
     @Override
-    public ModeloUsuarios getUsuarios(String codigo) {
+    public ModeloUsuarios getUsuarios(int codigo) {
         for(ModeloUsuarios usuario : todosLosUsuarios){
             if(usuario.getCodigo() == codigo){
+                System.out.println(usuario);
                 return usuario;
             }
         }

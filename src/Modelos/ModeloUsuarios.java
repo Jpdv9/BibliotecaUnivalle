@@ -12,9 +12,9 @@ public class ModeloUsuarios {
     private String nombre;
     private String dependencia;
     private String estamento;
-    private String codigo;
+    private int codigo;
 
-    public ModeloUsuarios(String nombre, String dependencia, String estamento, String codigo){
+    public ModeloUsuarios(String nombre, String dependencia, String estamento, int codigo){
         this.nombre = nombre;
         this.dependencia = dependencia;
         this.estamento = estamento;
@@ -33,7 +33,7 @@ public class ModeloUsuarios {
         return estamento;
     }
 
-    public String getCodigo(){
+    public int getCodigo(){
         return codigo;
     }
 
@@ -45,7 +45,7 @@ public class ModeloUsuarios {
         this.dependencia = dependecia;
     }
 
-    public void setCodigo(String codigo){
+    public void setCodigo(int codigo){
         this.codigo = codigo;
     }
 

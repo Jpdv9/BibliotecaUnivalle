@@ -63,6 +63,7 @@ public class VistaUsuarios extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
+        
 
         btnFinalizar.setText("Finalizar");
 
@@ -163,7 +164,7 @@ public class VistaUsuarios extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnFinalizar;
     public javax.swing.JButton btnListar;
-    private javax.swing.JComboBox<String> cmbEstamento;
+    public javax.swing.JComboBox<String> cmbEstamento;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCodigo;
