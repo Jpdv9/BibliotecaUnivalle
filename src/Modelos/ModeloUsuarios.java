@@ -12,11 +12,11 @@ public class ModeloUsuarios {
     private String nombre;
     private String dependencia;
     private String estamento;
-    private int codigo;
+    private String codigo;
 
-    public ModeloUsuarios(String nombre, String dependecia, String estamento, int codigo){
+    public ModeloUsuarios(String nombre, String dependencia, String estamento, String codigo){
         this.nombre = nombre;
-        this.dependencia = dependecia;
+        this.dependencia = dependencia;
         this.estamento = estamento;
         this.codigo = codigo;
     }
@@ -33,7 +33,7 @@ public class ModeloUsuarios {
         return estamento;
     }
 
-    public int getCodigo(){
+    public String getCodigo(){
         return codigo;
     }
 
@@ -45,7 +45,16 @@ public class ModeloUsuarios {
         this.dependencia = dependecia;
     }
 
-    public void setCodigo(int codigo){
+    public void setCodigo(String codigo){
         this.codigo = codigo;
+    }
+
+    public void setEstamento(String estamento){
+        this.estamento = estamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", Código: " + codigo + ", Dependencia: " + dependencia + ", Estamento: " + estamento;
     }
 }

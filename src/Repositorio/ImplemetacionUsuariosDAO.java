@@ -5,21 +5,23 @@ import java.util.List;
 
 import Modelos.ModeloUsuarios;
 
-public class ImplemetacionUsuarios implements InterfaceUsuarios {
+public class ImplemetacionUsuariosDAO implements InterfaceUsuariosDAO {
 
     private List<ModeloUsuarios> todosLosUsuarios;
 
-    public ImplemetacionUsuarios(){
+    public ImplemetacionUsuariosDAO(){
         todosLosUsuarios = new ArrayList<>();
     }
 
     @Override
     public List<ModeloUsuarios> usuarios() {
+        System.out.println(todosLosUsuarios);
+    
         return todosLosUsuarios;
+        
     }
-
     @Override
-    public ModeloUsuarios getUsuarios(int codigo) {
+    public ModeloUsuarios getUsuarios(String codigo) {
         for(ModeloUsuarios usuario : todosLosUsuarios){
             if(usuario.getCodigo() == codigo){
                 return usuario;
@@ -32,6 +34,8 @@ public class ImplemetacionUsuarios implements InterfaceUsuarios {
     @Override
     public void save(ModeloUsuarios usuario) {
         todosLosUsuarios.add(usuario);
+        System.out.println(todosLosUsuarios);
+
     }
 
     @Override

@@ -44,6 +44,8 @@ public class ControladorIniciarSesion implements ActionListener {
             if(administrador != null && administrador.getContraseña().equals(Model.getContraseña())){
                 VistaMenu vistamenu = new VistaMenu();
                 vistamenu.setVisible(true);
+                ControladorMenu controladorMenu = new ControladorMenu(vistamenu);
+                controladorMenu.iniciar();
                 view.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Contraseña Incorrecta", "Advertencia", JOptionPane.ERROR_MESSAGE);

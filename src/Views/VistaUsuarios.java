@@ -155,23 +155,23 @@ public class VistaUsuarios extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnFinalizar;
-    private javax.swing.JButton btnListar;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnFinalizar;
+    public javax.swing.JButton btnListar;
     private javax.swing.JComboBox<String> cmbEstamento;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDependencia;
     private javax.swing.JLabel lblEstamento;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JTextField txtDependencia;
-    private javax.swing.JTextField txtIdUsuario;
-    private javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtDependencia;
+    public javax.swing.JTextField txtIdUsuario;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

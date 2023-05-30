@@ -18,12 +18,14 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        VistaIniciarSesion view = new VistaIniciarSesion ( );
+        VistaIniciarSesion view = new VistaIniciarSesion ();
         
         ModeloIniciarSesion model = new ModeloIniciarSesion("Usuario", "Contraseña");
         InterfaceIniciarSesionDAO daoAministrador = new ImplementacionIniciarSesionDAO();
         ControladorIniciarSesion ctrl = new ControladorIniciarSesion (view,model, daoAministrador);
+
         ctrl.iniciar();
+
         view.setVisible(true);
     }
     

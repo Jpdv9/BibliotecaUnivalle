@@ -1,12 +1,15 @@
 
 package Controladores;
 
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Modelos.ModeloUsuarios;
+import Repositorio.ImplemetacionUsuariosDAO;
+import Repositorio.InterfaceUsuariosDAO;
 import Views.VistaMenu;
+import Views.VistaUsuarios;
 
 /**
  *
@@ -23,13 +26,19 @@ public class ControladorMenu implements ActionListener{
     }
 
     public void iniciar() {
-        
+        vistaMenu.setTitle("MENU");
+        vistaMenu.setLocationRelativeTo(null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnUsuarios){
-            System.out.println("funcinando");
+            VistaUsuarios vistaUsuarios = new VistaUsuarios();
+            ModeloUsuarios modeloUsuarios = new ModeloUsuarios("Nombre", "Dependecia", "Estamento", "0000");
+            InterfaceUsuariosDAO interfaceUsuariosDAO = new ImplemetacionUsuariosDAO();
+            ControladorUsuarios controladorUsuarios = new ControladorUsuarios(vistaUsuarios, modeloUsuarios, interfaceUsuariosDAO);
+            controladorUsuarios.iniciar();
+            vistaUsuarios.setVisible(true);
             vistaMenu.dispose();
         }
     }
