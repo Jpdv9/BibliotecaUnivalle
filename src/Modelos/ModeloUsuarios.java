@@ -9,14 +9,15 @@ package Modelos;
  * @author Franklin Aguirre
  */
 public class ModeloUsuarios {
-    //private String tipoId;
     private String nombre;
     private String dependencia;
+    private String estamento;
     private int codigo;
 
-    public ModeloUsuarios(String nombre, String dependecia, int codigo){
+    public ModeloUsuarios(String nombre, String dependecia, String estamento, int codigo){
         this.nombre = nombre;
         this.dependencia = dependecia;
+        this.estamento = estamento;
         this.codigo = codigo;
     }
 
@@ -26,6 +27,10 @@ public class ModeloUsuarios {
 
     public String getDependencia(){
         return dependencia;
+    }
+
+    public String getEstamento(){
+        return estamento;
     }
 
     public int getCodigo(){

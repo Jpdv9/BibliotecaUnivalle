@@ -19,9 +19,9 @@ public class ImplemetacionUsuarios implements InterfaceUsuarios {
     }
 
     @Override
-    public ModeloUsuarios getUsuarios(int id) {
+    public ModeloUsuarios getUsuarios(int codigo) {
         for(ModeloUsuarios usuario : todosLosUsuarios){
-            if(usuario.getCodigo() == id){
+            if(usuario.getCodigo() == codigo){
                 return usuario;
             }
         }
@@ -36,7 +36,12 @@ public class ImplemetacionUsuarios implements InterfaceUsuarios {
 
     @Override
     public void uptade(ModeloUsuarios usuario) {
-        // el codigo se implantara mas tarde, cuando la vista usuario este 100% realizada
+        for(int i = 0; i < todosLosUsuarios.size(); i++){
+            if(todosLosUsuarios.get(i).getCodigo() == usuario.getCodigo()){
+                todosLosUsuarios.set(i, usuario);
+                break;
+            }
+        }
     }
 
     @Override

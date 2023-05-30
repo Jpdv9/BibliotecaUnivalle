@@ -6,7 +6,7 @@ import Modelos.ModeloUsuarios;
 
 public interface InterfaceUsuarios {
     List<ModeloUsuarios> usuarios();
-    ModeloUsuarios getUsuarios(int id);
+    ModeloUsuarios getUsuarios(int codigo);
     void save(ModeloUsuarios usuario);
     void uptade(ModeloUsuarios usuario);
     void delete(ModeloUsuarios usuario);
