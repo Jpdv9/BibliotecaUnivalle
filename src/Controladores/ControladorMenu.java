@@ -18,11 +18,18 @@ import Views.VistaUsuarios;
 
 public class ControladorMenu implements ActionListener{
     private VistaMenu vistaMenu;
+    private VistaUsuarios vistaUsuarios;
+    private ModeloUsuarios modeloUsuarios;
+    private InterfaceUsuariosDAO interfaceUsuariosDAO;
 
     public ControladorMenu(VistaMenu vistaMenu){
         this.vistaMenu = vistaMenu;
 
         this.vistaMenu.btnUsuarios.addActionListener(this);
+
+        this.vistaUsuarios = new VistaUsuarios();
+        this.modeloUsuarios = new ModeloUsuarios("Nombre", "Dependencia", "Estamento", 0);
+        this.interfaceUsuariosDAO = new ImplemetacionUsuariosDAO();
     }
 
     public void iniciar() {
@@ -33,13 +40,10 @@ public class ControladorMenu implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnUsuarios){
-            VistaUsuarios vistaUsuarios = new VistaUsuarios();
-            ModeloUsuarios modeloUsuarios = new ModeloUsuarios("Nombre", "Dependecia", "Estamento", 0000);
-            InterfaceUsuariosDAO interfaceUsuariosDAO = new ImplemetacionUsuariosDAO();
             ControladorUsuarios controladorUsuarios = new ControladorUsuarios(vistaUsuarios, modeloUsuarios, interfaceUsuariosDAO);
             controladorUsuarios.iniciar();
             vistaUsuarios.setVisible(true);
-            vistaMenu.dispose();
+            vistaMenu.setVisible(false);
         }
     }
 

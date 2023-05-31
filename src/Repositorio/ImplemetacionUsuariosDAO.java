@@ -38,9 +38,12 @@ public class ImplemetacionUsuariosDAO implements InterfaceUsuariosDAO {
 
     @Override
     public void save(ModeloUsuarios usuario) {
-        todosLosUsuarios.add(usuario);
-        System.out.println(todosLosUsuarios);
-
+        ModeloUsuarios nuevoUsuario =  new ModeloUsuarios("Nombre", "Dependencia", "Estamento", 0);
+        nuevoUsuario.setCodigo(usuario.getCodigo());
+        nuevoUsuario.setNombre(usuario.getNombre());
+        nuevoUsuario.setDependencia(usuario.getDependencia());
+        nuevoUsuario.setEstamento(usuario.getEstamento());
+        todosLosUsuarios.add(nuevoUsuario);
     }
 
     @Override
