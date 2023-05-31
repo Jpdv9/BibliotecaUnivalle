@@ -1,6 +1,7 @@
 
 package Controladores;
 
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,23 +23,26 @@ public class ControladorUsuarios implements ActionListener{
     private VistaUsuarios vistaUsuarios;
     private ModeloUsuarios modeloUsuarios;
     private InterfaceUsuariosDAO interfaceUsuariosDAO;
-    private ImplemetacionUsuariosDAO implemetacionUsuariosDAO;
+    //private ImplemetacionUsuariosDAO implemetacionUsuariosDAO;
     
     
     public ControladorUsuarios (VistaUsuarios vistaUsuarios, ModeloUsuarios modeloUsuarios, InterfaceUsuariosDAO interfaceUsuariosDAO) {
         this.vistaUsuarios = vistaUsuarios;
         this.modeloUsuarios = modeloUsuarios;
-        this.interfaceUsuariosDAO = interfaceUsuariosDAO;
-        this.implemetacionUsuariosDAO = new ImplemetacionUsuariosDAO();
+        this.interfaceUsuariosDAO = new ImplemetacionUsuariosDAO();
+        //this.implemetacionUsuariosDAO = new ImplemetacionUsuariosDAO();
+        
         
         this.vistaUsuarios.btnAgregar.addActionListener(this);
         this.vistaUsuarios.btnBuscar.addActionListener(this);
+        this.vistaUsuarios.btnListar.addActionListener(this);
     }
     public void iniciar() {
         vistaUsuarios.setTitle("USUARIOS");
         vistaUsuarios.setLocationRelativeTo(null);
         
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -60,7 +64,7 @@ public class ControladorUsuarios implements ActionListener{
             vistaUsuarios.txtNombre.setText("");
             vistaUsuarios.txtDependencia.setText("");
 
-            implemetacionUsuariosDAO.save(modeloUsuarios);
+            interfaceUsuariosDAO.save(modeloUsuarios);
             } catch (NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "Digite un numero", "Advertencia", JOptionPane.ERROR_MESSAGE);
             }
@@ -69,7 +73,7 @@ public class ControladorUsuarios implements ActionListener{
         if(e.getSource() == vistaUsuarios.btnBuscar){
             if(!vistaUsuarios.txtIdUsuario.getText().isEmpty()){
                 int codigoUsuario = Integer.parseInt(vistaUsuarios.txtIdUsuario.getText());
-                ModeloUsuarios usuarioEncontrado = implemetacionUsuariosDAO.getUsuarios(codigoUsuario);
+                ModeloUsuarios usuarioEncontrado = interfaceUsuariosDAO.getUsuarios(codigoUsuario);
 
                 if(usuarioEncontrado == null){
                     JOptionPane.showMessageDialog(null, "¡El usuario no esta registrado!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -80,6 +84,11 @@ public class ControladorUsuarios implements ActionListener{
             }else{
                 System.out.println("Vacio");
             }
+        }
+
+        if(e.getSource() == vistaUsuarios.btnListar){
+            List<ModeloUsuarios> usuarios = interfaceUsuariosDAO.usuarios();
+            vistaUsuarios.mostrarUsuario(usuarios);
         }
     }
 }

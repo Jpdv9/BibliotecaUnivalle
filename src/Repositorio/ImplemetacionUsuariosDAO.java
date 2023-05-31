@@ -11,6 +11,11 @@ public class ImplemetacionUsuariosDAO implements InterfaceUsuariosDAO {
 
     public ImplemetacionUsuariosDAO(){
         todosLosUsuarios = new ArrayList<>();
+
+         //Adiministradores
+        todosLosUsuarios.add(new ModeloUsuarios("Carlos Aguirre Lopez", "Ingenieria De Sistema","Estudiante",201965685));
+        todosLosUsuarios.add(new ModeloUsuarios("Franklin", "Ingenieria De Sistema", "Estudiante", 201865575));
+        todosLosUsuarios.add(new ModeloUsuarios("Juan Esteban Hernadez", "Derecho", "Profesor", 100104556));
     }
 
     @Override

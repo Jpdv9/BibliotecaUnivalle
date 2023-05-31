@@ -1,6 +1,10 @@
 
 package Views;
 
+import java.util.List;
+
+import Modelos.ModeloUsuarios;
+
 /**
  *
  * @author Franklin Aguirre
@@ -175,4 +179,13 @@ public class VistaUsuarios extends javax.swing.JFrame {
     public javax.swing.JTextField txtIdUsuario;
     public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
+
+    public void mostrarUsuario(List<ModeloUsuarios> usuarios){
+        jTextArea1.setText("");
+        
+        for(ModeloUsuarios usuario : usuarios){
+            jTextArea1.append(usuario.toString() + "\n");
+        }
+    }
 }
+
