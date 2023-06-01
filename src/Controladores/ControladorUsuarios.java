@@ -21,14 +21,16 @@ public class ControladorUsuarios implements ActionListener{
     private VistaUsuarios vistaUsuarios;
     private ModeloUsuarios modeloUsuarios;
     private InterfaceUsuariosDAO interfaceUsuariosDAO;
+    private VistaMenu vistaMenu;
     
     
-    public ControladorUsuarios (VistaUsuarios vistaUsuarios, ModeloUsuarios modeloUsuarios, InterfaceUsuariosDAO interfaceUsuariosDAO) {
+    public ControladorUsuarios (VistaUsuarios vistaUsuarios, ModeloUsuarios modeloUsuarios, InterfaceUsuariosDAO interfaceUsuariosDAO, VistaMenu vistaMenu) {
         this.vistaUsuarios = vistaUsuarios;
         this.modeloUsuarios = modeloUsuarios;
         this.interfaceUsuariosDAO = new ImplemetacionUsuariosDAO();
+        this.vistaMenu = vistaMenu;
         
-        
+        //Funcionalidades de los botones
         this.vistaUsuarios.btnAgregar.addActionListener(this);
         this.vistaUsuarios.btnBuscar.addActionListener(this);
         this.vistaUsuarios.btnListar.addActionListener(this);
@@ -156,10 +158,10 @@ public class ControladorUsuarios implements ActionListener{
 
         //Cierra la vista de usuario y devuelve la vista menu
         if(e.getSource() == vistaUsuarios.btnFinalizar){
-            VistaMenu vistaMenu = new VistaMenu();
+            //VistaMenu vistaMenu = new VistaMenu();
             vistaMenu.setVisible(true);
-            ControladorMenu controladorMenu = new ControladorMenu(vistaMenu);
-            controladorMenu.iniciar();
+            //ControladorMenu controladorMenu = new ControladorMenu(vistaMenu);
+            //controladorMenu.iniciar();
             vistaUsuarios.setVisible(false);
         }
     }

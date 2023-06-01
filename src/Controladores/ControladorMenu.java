@@ -40,12 +40,10 @@ public class ControladorMenu implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaMenu.btnUsuarios){
-            ControladorUsuarios controladorUsuarios = new ControladorUsuarios(vistaUsuarios, modeloUsuarios, interfaceUsuariosDAO);
+            ControladorUsuarios controladorUsuarios = new ControladorUsuarios(vistaUsuarios, modeloUsuarios, interfaceUsuariosDAO, vistaMenu);
             controladorUsuarios.iniciar();
             vistaUsuarios.setVisible(true);
             vistaMenu.setVisible(false);
         }
     }
-
-
 }
