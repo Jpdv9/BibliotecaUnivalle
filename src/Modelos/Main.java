@@ -1,9 +1,9 @@
 
 package Modelos;
 
+import Colecciones.ImplementacionIniciarSesionDAO;
+import Colecciones.InterfaceIniciarSesionDAO;
 import Controladores.ControladorIniciarSesion;
-import Repositorio.ImplementacionIniciarSesionDAO;
-import Repositorio.InterfaceIniciarSesionDAO;
 import Views.VistaIniciarSesion;
 
 

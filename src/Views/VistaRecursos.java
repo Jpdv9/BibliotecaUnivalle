@@ -171,12 +171,12 @@ public class VistaRecursos extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnFinalizar;
-    private javax.swing.JButton btnListar;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnFinalizar;
+    public javax.swing.JButton btnListar;
     public javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JComboBox<String> cmbTipoRecurso;
     private javax.swing.JLabel jLabel1;

@@ -5,9 +5,10 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+
+import Colecciones.ImplemetacionUsuariosDAO;
+import Colecciones.InterfaceUsuariosDAO;
 import Modelos.ModeloUsuarios;
-import Repositorio.ImplemetacionUsuariosDAO;
-import Repositorio.InterfaceUsuariosDAO;
 import Views.VistaMenu;
 import Views.VistaUsuarios;
 
@@ -158,11 +159,9 @@ public class ControladorUsuarios implements ActionListener{
 
         //Cierra la vista de usuario y devuelve la vista menu
         if(e.getSource() == vistaUsuarios.btnFinalizar){
-            //VistaMenu vistaMenu = new VistaMenu();
-            vistaMenu.setVisible(true);
-            //ControladorMenu controladorMenu = new ControladorMenu(vistaMenu);
-            //controladorMenu.iniciar();
             vistaUsuarios.setVisible(false);
+            vistaMenu.setVisible(true);
+            
         }
     }
 }

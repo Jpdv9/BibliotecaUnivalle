@@ -5,10 +5,10 @@ package Controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Colecciones.ImplemetacionUsuariosDAO;
+import Colecciones.InterfaceUsuariosDAO;
 import Modelos.ModeloRecursos;
 import Modelos.ModeloUsuarios;
-import Repositorio.ImplemetacionUsuariosDAO;
-import Repositorio.InterfaceUsuariosDAO;
 import Views.VistaMenu;
 import Views.VistaRecursos;
 import Views.VistaUsuarios;
