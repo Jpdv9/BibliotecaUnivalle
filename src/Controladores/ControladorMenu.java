@@ -7,9 +7,11 @@ import java.awt.event.ActionListener;
 
 import Colecciones.ImplemetacionUsuariosDAO;
 import Colecciones.InterfaceUsuariosDAO;
+import Modelos.ModeloPrestamos;
 import Modelos.ModeloRecursos;
 import Modelos.ModeloUsuarios;
 import Views.VistaMenu;
+import Views.VistaPrestamos;
 import Views.VistaRecursos;
 import Views.VistaUsuarios;
 
@@ -22,8 +24,10 @@ public class ControladorMenu implements ActionListener{
     private VistaMenu vistaMenu;
     private VistaUsuarios vistaUsuarios;
     private VistaRecursos vistaRecursos;
+    private VistaPrestamos vistaPrestamos;
     private ModeloUsuarios modeloUsuarios;
     private ModeloRecursos modeloRecursos;
+    private ModeloPrestamos modeloPrestamos;
     private InterfaceUsuariosDAO interfaceUsuariosDAO;
 
 
@@ -33,6 +37,7 @@ public class ControladorMenu implements ActionListener{
         //Funcionalidad de los botones
         this.vistaMenu.btnUsuarios.addActionListener(this);
         this.vistaMenu.btnRecursos.addActionListener(this);
+        this.vistaMenu.btnPrestamos.addActionListener(this);
 
         //Vista Usuario
         this.vistaUsuarios = new VistaUsuarios();
@@ -41,7 +46,11 @@ public class ControladorMenu implements ActionListener{
 
         //Vista Recursos
         this.vistaRecursos = new VistaRecursos();
-        this.modeloRecursos = new ModeloRecursos("Nombre", "Autor", "Tipo De Recurso", 0);
+        this.modeloRecursos = new ModeloRecursos("Nombre", "Autor", "Tipo De Recurso", "genero",0);
+
+        //Vista Prestamos
+        this.vistaPrestamos = new VistaPrestamos();
+        this.modeloPrestamos = new ModeloPrestamos();
     }
 
     public void iniciar() {
@@ -63,6 +72,11 @@ public class ControladorMenu implements ActionListener{
             vistaRecursos.setVisible(true);
             ControladorRecursos controladorRecursos = new ControladorRecursos(vistaRecursos, vistaMenu, modeloRecursos);
             controladorRecursos.iniciar();
+        }
+
+        if(e.getSource() == vistaMenu.btnPrestamos){
+            vistaMenu.setVisible(false);
+            vistaPrestamos.setVisible(true);
         }
     }
 }

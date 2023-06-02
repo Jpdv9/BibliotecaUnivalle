@@ -21,7 +21,7 @@ public class ImplementacionRecursosDAO implements InterfaceRecursosDAO{
     @Override
     public ModeloRecursos getRecursos(int referencia) {
         for(ModeloRecursos recurso : todosLosRecursos){
-            if(recurso.getReferencia() == referencia){
+            if(recurso.getIsbn() == referencia){
                 return recurso;
             }
         }
@@ -31,18 +31,20 @@ public class ImplementacionRecursosDAO implements InterfaceRecursosDAO{
 
     @Override
     public void save(ModeloRecursos recurso) {
-        ModeloRecursos nuevoRecursos =  new ModeloRecursos("Nombre", "Autor", "Tipo De Recurso", 0);
+        ModeloRecursos nuevoRecursos =  new ModeloRecursos("Nombre", "Autor", "Tipo De Recurso","genero", 0);
         nuevoRecursos.setNombre(recurso.getNombre());
-        nuevoRecursos.setReferencia(recurso.getReferencia());
+        nuevoRecursos.setIsbn(recurso.getIsbn());
         nuevoRecursos.setAutor(recurso.getAutor());
         nuevoRecursos.setTipoDeRecursos(recurso.getTipoDeRecurso());
+        nuevoRecursos.setGenero(recurso.getGenero());
         todosLosRecursos.add(nuevoRecursos);
+        System.out.println(nuevoRecursos);
     }
 
     @Override
     public void update(ModeloRecursos recurso) {
         for(int i = 0; i < todosLosRecursos.size(); i++){
-            if(todosLosRecursos.get(i).getReferencia() == recurso.getReferencia()){
+            if(todosLosRecursos.get(i).getIsbn() == recurso.getIsbn()){
                 todosLosRecursos.set(i, recurso);
                 break;
             }

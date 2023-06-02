@@ -108,7 +108,7 @@ public class ControladorUsuarios implements ActionListener{
             int codigoUsuario = Integer.parseInt(vistaUsuarios.txtIdUsuario.getText());
             ModeloUsuarios usuarioEncontrado = interfaceUsuariosDAO.getUsuarios(codigoUsuario);
 
-            try { modeloUsuarios.setCodigo(Integer.parseInt(vistaUsuarios.txtIdUsuario.getText()));
+            try { modeloUsuarios.setCodigo(codigoUsuario);
 
                 if(usuarioEncontrado != null){
                     interfaceUsuariosDAO.delete(usuarioEncontrado);

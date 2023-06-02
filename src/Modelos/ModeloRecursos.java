@@ -4,13 +4,15 @@ public class ModeloRecursos {
     private String nombre;
     private String autor;
     private String tipoDeRecurso;
-    private int referencia;
+    private String genero;
+    private int isbn;
 
-    public ModeloRecursos(String nombre, String autor, String tipoDeRecurso, int referencia){
+    public ModeloRecursos(String nombre, String autor, String tipoDeRecurso, String genero, int isbn){
         this.nombre = nombre;
         this.autor = autor;
         this.tipoDeRecurso = tipoDeRecurso;
-        this.referencia = referencia;
+        this.genero = genero;
+        this.isbn = isbn;
     }
 
     // gets
@@ -27,8 +29,12 @@ public class ModeloRecursos {
         return tipoDeRecurso;
     }
 
-    public int getReferencia(){
-        return referencia;
+    public String getGenero(){
+        return genero;
+    }
+
+    public int getIsbn(){
+        return isbn;
     }
 
     // sets
@@ -45,7 +51,17 @@ public class ModeloRecursos {
         this.tipoDeRecurso = tipoDeRecurso;
     }
 
-    public void setReferencia(int referencia){
-        this.referencia = referencia;
+    public void setGenero(String genero){
+        this.genero = genero;
     }
+
+    public void setIsbn(int isbn){
+        this.isbn = isbn;
+    }
+
+    @Override
+    public String toString(){
+        return "ISBN: " + isbn + ", Nombre: " + nombre + ", Autor: " + autor + ", Genero: " + genero + ", Tipo de Recurso: " + tipoDeRecurso;
+    }
+
 }

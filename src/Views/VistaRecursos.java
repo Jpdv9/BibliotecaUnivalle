@@ -1,6 +1,10 @@
 
 package Views;
 
+import java.util.List;
+
+import Modelos.ModeloRecursos;
+
 /**
  *
  * @author Franklin Aguirre
@@ -168,7 +172,6 @@ public class VistaRecursos extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
@@ -177,18 +180,27 @@ public class VistaRecursos extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnFinalizar;
     public javax.swing.JButton btnListar;
-    public javax.swing.JComboBox<String> cmbTipo;
-    private javax.swing.JComboBox<String> cmbTipoRecurso;
+    //public javax.swing.JComboBox<String> cmbTipo;
+    public javax.swing.JComboBox<String> cmbTipoRecurso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEstamento;
     private javax.swing.JLabel lblNombreRecurso;
-    private javax.swing.JTextField txtAutor;
-    private javax.swing.JTextField txtGeneroLiterario;
-    private javax.swing.JTextField txtIsbn;
-    private javax.swing.JTextField txtNombreEjemplar;
+    public javax.swing.JTextField txtAutor;
+    public javax.swing.JTextField txtGeneroLiterario;
+    public javax.swing.JTextField txtIsbn;
+    public javax.swing.JTextField txtNombreEjemplar;
     // End of variables declaration//GEN-END:variables
+
+    public void mostrarRecursos(List<ModeloRecursos> recursos){
+
+        jTextArea1.setText("");
+        
+        for(ModeloRecursos recurso : recursos){
+            jTextArea1.append(recurso.toString() + "\n");
+        }
+    }
 }
