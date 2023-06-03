@@ -1,6 +1,7 @@
 package Controladores;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -89,7 +90,7 @@ public class ControladorRecursos implements ActionListener{
             }
         }
 
-        if(e.getSource() == vistaRecursos.bntBuscarAutor){
+        if(e.getSource() == vistaRecursos.btnBuscar){
             if(!vistaRecursos.txtIsbn.getText().isEmpty()){
 
                 int referencia = Integer.parseInt(vistaRecursos.txtIsbn.getText());
@@ -102,6 +103,42 @@ public class ControladorRecursos implements ActionListener{
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Digite el numero de identificación del recurso", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        if(e.getSource() == vistaRecursos.bntBuscarAutor){
+            if(!vistaRecursos.txtAutor.getText().isEmpty()){
+
+                String nombreAutor = vistaRecursos.txtAutor.getText();
+                List<ModeloRecursos> recursoAutor = new ArrayList<>();
+
+                List<ModeloRecursos> todosLosRecursos = interfaceRecursosDAO.recursos();
+
+                for(ModeloRecursos recurso : todosLosRecursos){
+                    if(recurso.getAutor().equalsIgnoreCase(nombreAutor)){
+                        recursoAutor.add(recurso);
+                    }
+                }
+                
+                if(recursoAutor.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "¡No hay ningun recurso del autor registrado!", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    StringBuilder mensaje = new StringBuilder("Se han encontrado recursos del autor: \n");
+
+                    for(ModeloRecursos recurso: recursoAutor){
+                        mensaje.append("- Nombre: ").append(recurso.getNombre()).append("\n");
+                        mensaje.append("  Autor: ").append(recurso.getAutor()).append("\n");
+                        mensaje.append("  Tipo de Recurso: ").append(recurso.getTipoDeRecurso()).append("\n");
+                        mensaje.append("  Género: ").append(recurso.getGenero()).append("\n");
+                        mensaje.append("  ISBN: ").append(recurso.getIsbn()).append("\n");
+                        mensaje.append("\n");
+                    }
+                    JOptionPane.showMessageDialog(null, mensaje.toString(), "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                    vistaRecursos.mostrarRecursos(recursoAutor);
+                }
+
+            }else{
+                JOptionPane.showMessageDialog(null, "Por favor digite el nombre del autor", "Advertencia", JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -157,7 +194,6 @@ public class ControladorRecursos implements ActionListener{
         if(e.getSource() == vistaRecursos.btnListar){
             List<ModeloRecursos> recursos = interfaceRecursosDAO.recursos();
             vistaRecursos.mostrarRecursos(recursos);
-            
         }
 
         if(e.getSource() == vistaRecursos.btnFinalizar){

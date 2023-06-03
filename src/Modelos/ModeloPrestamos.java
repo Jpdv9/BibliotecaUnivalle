@@ -11,7 +11,6 @@ public class ModeloPrestamos {
         this.DiasPrestamo = DiasPrestamo;
         this.FechaDevolucion = FechaDevolucion;
     }
-   
     
     public String getEstado() {
         return estado;
@@ -36,8 +35,5 @@ public class ModeloPrestamos {
     public void setFechaDevolucion(String FechaDevolucion) {
         this.FechaDevolucion = FechaDevolucion;
     }
-    
- 
-
     
 }
