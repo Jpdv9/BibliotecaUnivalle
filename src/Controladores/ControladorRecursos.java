@@ -32,6 +32,7 @@ public class ControladorRecursos implements ActionListener{
         this.vistaRecursos.btnEliminar.addActionListener(this);
         this.vistaRecursos.btnListar.addActionListener(this);
         this.vistaRecursos.btnFinalizar.addActionListener(this);
+        this.vistaRecursos.bntBuscarAutor.addActionListener(this);
     }
 
     public void iniciar(){
@@ -88,7 +89,7 @@ public class ControladorRecursos implements ActionListener{
             }
         }
 
-        if(e.getSource() == vistaRecursos.btnBuscar){
+        if(e.getSource() == vistaRecursos.bntBuscarAutor){
             if(!vistaRecursos.txtIsbn.getText().isEmpty()){
 
                 int referencia = Integer.parseInt(vistaRecursos.txtIsbn.getText());

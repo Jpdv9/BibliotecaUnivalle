@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Views;
 
 /**
@@ -15,8 +12,10 @@ public class VistaMenu extends javax.swing.JFrame {
      */
     private String nombre = "/IMAGENES/FondoMenu.png";
     private Fondo fondo =new Fondo(nombre);
+    private String Usuario ;
     
-    public VistaMenu() {
+    public VistaMenu(String Usuario) {
+        this.Usuario=Usuario;
         this.setContentPane(fondo);
         initComponents();
     }
@@ -40,14 +39,23 @@ public class VistaMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        btnUsuarios.setBackground(new java.awt.Color(255, 0, 51));
         btnUsuarios.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setText("USUARIOS");
+        btnUsuarios.setBorderPainted(false);
 
+        btnRecursos.setBackground(new java.awt.Color(255, 0, 51));
         btnRecursos.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        btnRecursos.setForeground(new java.awt.Color(255, 255, 255));
         btnRecursos.setText("RECURSOS");
+        btnRecursos.setBorderPainted(false);
 
+        btnPrestamos.setBackground(new java.awt.Color(255, 0, 51));
         btnPrestamos.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        btnPrestamos.setForeground(new java.awt.Color(255, 255, 255));
         btnPrestamos.setText("PRESTAMOS");
+        btnPrestamos.setBorderPainted(false);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel2.setText("Biblioteca Univalle");
@@ -56,7 +64,7 @@ public class VistaMenu extends javax.swing.JFrame {
         jLabel1.setText("BIENVENIDO:");
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel3.setText("Nombre Usuario");
+        jLabel3.setText(Usuario);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
