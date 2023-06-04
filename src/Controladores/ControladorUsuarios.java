@@ -112,6 +112,7 @@ public class ControladorUsuarios implements ActionListener{
 
                 if(usuarioEncontrado != null){
                     interfaceUsuariosDAO.delete(usuarioEncontrado);
+                    JOptionPane.showMessageDialog(null, "¡El usuario fue eliminado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 }
 
             } catch (NumberFormatException ex){
