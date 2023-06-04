@@ -104,7 +104,7 @@ public class ControladorUsuarios implements ActionListener{
 
         //Elimina al usuario
         if(e.getSource() == vistaUsuarios.btnEliminar){
-
+            if (!vistaUsuarios.txtIdUsuario.getText().isEmpty()) {
             int codigoUsuario = Integer.parseInt(vistaUsuarios.txtIdUsuario.getText());
             ModeloUsuarios usuarioEncontrado = interfaceUsuariosDAO.getUsuarios(codigoUsuario);
 
@@ -118,6 +118,11 @@ public class ControladorUsuarios implements ActionListener{
             } catch (NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "Digite el numero de identificación", "Advertencia", JOptionPane.ERROR_MESSAGE);
             }
+            }else {
+            JOptionPane.showMessageDialog(null, "El campo Código está vacío", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            }
+
+            
         }
 
         //Actualiza al usuario

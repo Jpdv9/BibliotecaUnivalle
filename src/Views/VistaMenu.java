@@ -77,6 +77,7 @@ public class VistaMenu extends javax.swing.JFrame {
         btnSalir.setToolTipText("");
         btnSalir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSalir.setBorderPainted(false);
+        btnSalir.setFocusable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

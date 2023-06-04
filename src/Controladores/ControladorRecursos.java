@@ -180,18 +180,29 @@ public class ControladorRecursos implements ActionListener{
         }
 
         if(e.getSource() == vistaRecursos.btnEliminar){
-            int referencia = Integer.parseInt(vistaRecursos.txtIsbn.getText());
-            ModeloRecursos recursoEncontrado = interfaceRecursosDAO.getRecursos(referencia);
-
-            try{ modeloRecursos.setIsbn(referencia);
+            
+            if(!vistaRecursos.txtIsbn.getText().isEmpty()){
+                
+                int referencia = Integer.parseInt(vistaRecursos.txtIsbn.getText());         
+                ModeloRecursos recursoEncontrado = interfaceRecursosDAO.getRecursos(referencia);
+                
+                try{ modeloRecursos.setIsbn(referencia);
 
                 if(recursoEncontrado != null){
                     interfaceRecursosDAO.delete(recursoEncontrado);
+                    JOptionPane.showMessageDialog(null, "¡El Recurso fue eliminado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 }
 
             }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "Digite el numero ISBN del recurso", "Advertencia", JOptionPane.ERROR_MESSAGE);
             }
+            }else{
+                JOptionPane.showMessageDialog(null, "El campo ISBN está vacío", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
+
+            
         }
 
         if(e.getSource() == vistaRecursos.btnListar){
