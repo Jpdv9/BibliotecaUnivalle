@@ -51,7 +51,7 @@ public class VistaPrestamos extends javax.swing.JFrame {
 
         jLabel5.setText("Dias prestamo");
 
-        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor", "Funcionario" }));
+        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abierto", "Parcialmente cerrado", "Completamente cerrado" }));
 
         btnAgregar.setText("Agregar");
 
@@ -106,7 +106,7 @@ public class VistaPrestamos extends javax.swing.JFrame {
                             .addComponent(btnAgregar)
                             .addComponent(btnActualizar)
                             .addComponent(btnConsultar))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(btnFinalizar)
                 .addContainerGap())
         );
