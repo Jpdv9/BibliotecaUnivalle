@@ -77,6 +77,8 @@ public class ControladorMenu implements ActionListener{
         if(e.getSource() == vistaMenu.btnPrestamos){
             vistaMenu.setVisible(false);
             vistaPrestamos.setVisible(true);
+            ControladorPrestamos controladorPrestamos = new ControladorPrestamos(vistaPrestamos, vistaMenu, modeloPrestamos);
+            controladorPrestamos.iniciar();
         }
     }
 }

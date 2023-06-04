@@ -16,7 +16,7 @@ public class ImplementacionRecursosDAO implements InterfaceRecursosDAO{
         todosLosRecursos.add(new ModeloRecursos("La Odisea", "Homero", "Libro", "Aventura", 12345678));
         todosLosRecursos.add(new ModeloRecursos("Tesis sobre Inteligencia Artificial", "Juan Pérez", "Tesis", "Tecnología", 23456789));
         todosLosRecursos.add(new ModeloRecursos("National Geographic ", " Frank Cuesta", "Revista", "Exploración", 34567890));
-todosLosRecursos.add(new ModeloRecursos("Dragon Ball", "Akira Toriyama", "Comic o Anime", "Acción", 45678901));
+        todosLosRecursos.add(new ModeloRecursos("Dragon Ball", "Akira Toriyama", "Comic o Anime", "Acción", 45678901));
         todosLosRecursos.add(new ModeloRecursos("Enciclopedia cuantica", "Albert Einstein ", "Enciclopedia", "Ciencia", 56789012));
         todosLosRecursos.add(new ModeloRecursos("El mago de oz", "George Orwell", "Libro", "Ciencia ficción", 67890123));
         todosLosRecursos.add(new ModeloRecursos("Tesis sobre Economía Internacional", "María Gómez", "Tesis", "Economía", 78901234));

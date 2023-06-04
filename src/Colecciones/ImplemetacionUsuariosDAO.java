@@ -28,7 +28,6 @@ public class ImplemetacionUsuariosDAO implements InterfaceUsuariosDAO {
     public ModeloUsuarios getUsuarios(int codigo) {
         for(ModeloUsuarios usuario : todosLosUsuarios){
             if(usuario.getCodigo() == codigo){
-                System.out.println(usuario);
                 return usuario;
             }
         }

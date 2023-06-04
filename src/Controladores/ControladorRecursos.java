@@ -60,13 +60,13 @@ public class ControladorRecursos implements ActionListener{
                     if(!vistaRecursos.txtIsbn.getText().isEmpty() && !vistaRecursos.txtNombreEjemplar.getText().isEmpty() 
                     && !vistaRecursos.txtAutor.getText().isEmpty() && !vistaRecursos.txtGeneroLiterario.getText().isEmpty()){
 
-                        //Sacar las opciones del estamento para agregar un nuevo usuario
-                        String estamentoSelecionado = (String) vistaRecursos.cmbTipoRecurso.getSelectedItem();
+                        //Sacar las opciones del tipo para agregar un nuevo usuario
+                        String tipoSelecionado = (String) vistaRecursos.cmbTipoRecurso.getSelectedItem();
 
                         modeloRecursos.setIsbn(referencia);
                         modeloRecursos.setNombre(vistaRecursos.txtNombreEjemplar.getText());
                         modeloRecursos.setAutor(vistaRecursos.txtAutor.getText());
-                        modeloRecursos.setTipoDeRecursos(estamentoSelecionado);
+                        modeloRecursos.setTipoDeRecursos(tipoSelecionado);
                         modeloRecursos.setGenero(vistaRecursos.txtGeneroLiterario.getText());
         
                         //Vaciar los campos de textos
@@ -74,6 +74,9 @@ public class ControladorRecursos implements ActionListener{
                         vistaRecursos.txtNombreEjemplar.setText("");
                         vistaRecursos.txtAutor.setText("");
                         vistaRecursos.txtGeneroLiterario.setText("");
+
+                        JOptionPane.showMessageDialog(null, "¡El Recurso ha sido agregado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+
 
                         interfaceRecursosDAO.save(modeloRecursos);
                         

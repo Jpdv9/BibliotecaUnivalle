@@ -5,6 +5,8 @@ public class ModeloPrestamos {
     private String estado;
     private String DiasPrestamo;
     private String FechaDevolucion;
+    private int codigo;
+    private int isbn;
 
     public ModeloPrestamos(String estado, String DiasPrestamo, String FechaDevolucion) {
         this.estado = estado;
@@ -35,5 +37,26 @@ public class ModeloPrestamos {
     public void setFechaDevolucion(String FechaDevolucion) {
         this.FechaDevolucion = FechaDevolucion;
     }
+
+    public int getCodigo(){
+        return codigo;
+    }
+
+    public void setCodigo(int codigo){
+        this.codigo = codigo;
+    }
+
+    public int getIsbn(){
+        return isbn;
+    }
+
+    public void setIsbn(int isbn){
+        this.isbn = isbn;
+    }
     
+
+    @Override
+    public String toString() {
+        return "Codigo: " + codigo + ", ISBN: " + isbn + ", Estado: " + estado + ", Dias Prestamo: " + DiasPrestamo + ", Fecha De Devolucion: " + FechaDevolucion;
+    }
 }
