@@ -42,6 +42,7 @@ public class ControladorPrestamos implements ActionListener{
         this.vistaPrestamos.btnConsultar.addActionListener(this);
         this.vistaPrestamos.btnActualizar.addActionListener(this);
         this.vistaPrestamos.btnEliminar.addActionListener(this);
+        this.vistaPrestamos.btnFinalizar.addActionListener(this);
 
     }
 
@@ -52,14 +53,21 @@ public class ControladorPrestamos implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        if(e.getSource() ==vistaPrestamos.btnFinalizar){
+                vistaPrestamos.setVisible(false);
+                vistaMenu.setVisible(true);
+            }  
+        
+        
         if(e.getSource() == vistaPrestamos.btnAgregar){
 
             int codigoUsario;
             int referenciaRecurso;
-
+            
             try{
-                codigoUsario = Integer.parseInt(vistaPrestamos.jTextField1.getText());
-                referenciaRecurso = Integer.parseInt(vistaPrestamos.jTextField2.getText());
+                codigoUsario = Integer.parseInt(vistaPrestamos.txtUsuarioId.getText());
+                referenciaRecurso = Integer.parseInt(vistaPrestamos.txtIsbnRrecurso.getText());
 
             }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "¡Llene primero los campos de ISBN y Código!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -85,22 +93,22 @@ public class ControladorPrestamos implements ActionListener{
                 }
             }
 
-            if(!vistaPrestamos.jTextField1.getText().isEmpty() && !vistaPrestamos.jTextField2.getText().isEmpty() && !vistaPrestamos.jTextField3.getText().isEmpty() 
-                && !vistaPrestamos.jTextField4.getText().isEmpty()){
+            if(!vistaPrestamos.txtUsuarioId.getText().isEmpty() && !vistaPrestamos.txtIsbnRrecurso.getText().isEmpty() && !vistaPrestamos.txtFechaDevolucion.getText().isEmpty() 
+                && !vistaPrestamos.txtDiasPrestamo.getText().isEmpty()){
 
                     String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
                     modeloPrestamos.setCodigo(codigoUsario);
                     modeloPrestamos.setIsbn(referenciaRecurso);
                     modeloPrestamos.setEstado(estadoSelecionado);
-                    modeloPrestamos.setDiasPrestamo(vistaPrestamos.jTextField4.getText());
-                    modeloPrestamos.setFechaDevolucion(vistaPrestamos.jTextField3.getText());
+                    modeloPrestamos.setDiasPrestamo(vistaPrestamos.txtDiasPrestamo.getText());
+                    modeloPrestamos.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
 
                     //Vaciar Espacios
-                    vistaPrestamos.jTextField1.setText("");
-                    vistaPrestamos.jTextField2.setText("");
-                    vistaPrestamos.jTextField3.setText("");
-                    vistaPrestamos.jTextField4.setText("");
+                    vistaPrestamos.txtUsuarioId.setText("");
+                    vistaPrestamos.txtIsbnRrecurso.setText("");
+                    vistaPrestamos.txtDiasPrestamo.setText("");
+                    vistaPrestamos.txtFechaDevolucion.setText("");
 
                     JOptionPane.showMessageDialog(null, "¡El prestamos ha sido agregado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
@@ -118,12 +126,12 @@ public class ControladorPrestamos implements ActionListener{
             int referenciaRecurso = 0;
         
             try {
-                if (!vistaPrestamos.jTextField1.getText().isEmpty()) {
-                    codigoUsuario = Integer.parseInt(vistaPrestamos.jTextField1.getText());
+                if (!vistaPrestamos.txtUsuarioId.getText().isEmpty()) {
+                    codigoUsuario = Integer.parseInt(vistaPrestamos.txtUsuarioId.getText());
                 }
         
-                if (!vistaPrestamos.jTextField2.getText().isEmpty()) {
-                    referenciaRecurso = Integer.parseInt(vistaPrestamos.jTextField2.getText());
+                if (!vistaPrestamos.txtIsbnRrecurso.getText().isEmpty()) {
+                    referenciaRecurso = Integer.parseInt(vistaPrestamos.txtIsbnRrecurso.getText());
                 }
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "¡Llene el campo de ISBN o Código con números para consultar!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -190,8 +198,8 @@ public class ControladorPrestamos implements ActionListener{
             int referenciaRecurso;
 
             try{
-                codigoUsario = Integer.parseInt(vistaPrestamos.jTextField1.getText());
-                referenciaRecurso = Integer.parseInt(vistaPrestamos.jTextField2.getText());
+                codigoUsario = Integer.parseInt(vistaPrestamos.txtUsuarioId.getText());
+                referenciaRecurso = Integer.parseInt(vistaPrestamos.txtIsbnRrecurso.getText());
 
             }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "¡Llene primero todos los campos!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -220,17 +228,16 @@ public class ControladorPrestamos implements ActionListener{
 
                         String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
-                        prestamo.setDiasPrestamo(vistaPrestamos.jTextField4.getText()); 
-                        prestamo.setFechaDevolucion(vistaPrestamos.jTextField3.getText());
+                        prestamo.setDiasPrestamo(vistaPrestamos.txtDiasPrestamo.getText()); 
+                        prestamo.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
                         prestamo.setEstado(estadoSelecionado);
 
                         interfacePrestamosDAO.update(prestamo);
 
-                        vistaPrestamos.jTextField1.setText("");
-                        vistaPrestamos.jTextField2.setText("");
-                        vistaPrestamos.jTextField3.setText("");
-                        vistaPrestamos.jTextField4.setText("");
-
+                        vistaPrestamos.txtUsuarioId.setText("");
+                        vistaPrestamos.txtIsbnRrecurso.setText("");
+                        vistaPrestamos.txtDiasPrestamo.setText("");
+                        vistaPrestamos.txtFechaDevolucion.setText("");
                         JOptionPane.showMessageDialog(null, "El prestamo fue actualizado", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     }
@@ -247,7 +254,7 @@ public class ControladorPrestamos implements ActionListener{
             int codigoUsario;
 
             try{
-                codigoUsario = Integer.parseInt(vistaPrestamos.jTextField1.getText());
+                codigoUsario = Integer.parseInt(vistaPrestamos.txtUsuarioId.getText());
 
             }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "¡Llene el campo usuario(ID)!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -270,16 +277,16 @@ public class ControladorPrestamos implements ActionListener{
 
                         String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
-                        prestamo.setDiasPrestamo(vistaPrestamos.jTextField4.getText()); 
-                        prestamo.setFechaDevolucion(vistaPrestamos.jTextField3.getText());
+                        prestamo.setDiasPrestamo(vistaPrestamos.txtDiasPrestamo.getText()); 
+                        prestamo.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
                         prestamo.setEstado(estadoSelecionado);
 
                         interfacePrestamosDAO.delete(prestamo);
 
-                        vistaPrestamos.jTextField1.setText("");
-                        vistaPrestamos.jTextField2.setText("");
-                        vistaPrestamos.jTextField3.setText("");
-                        vistaPrestamos.jTextField4.setText("");
+                        vistaPrestamos.txtUsuarioId.setText("");
+                        vistaPrestamos.txtIsbnRrecurso.setText("");
+                        vistaPrestamos.txtDiasPrestamo.setText("");
+                        vistaPrestamos.txtFechaDevolucion.setText("");
 
                         JOptionPane.showMessageDialog(null, "El prestamo ha sido eliminado", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                         break;
@@ -291,6 +298,6 @@ public class ControladorPrestamos implements ActionListener{
                 }
             }
         }
-        
+
     }
 }
