@@ -1,5 +1,6 @@
 package Controladores;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +17,8 @@ import Modelos.ModeloPrestamos;
 import Modelos.ModeloRecursos;
 import Modelos.ModeloUsuarios;
 import Views.VistaMenu;
-import Views.VistaPrestamos; 
+import Views.VistaPrestamos;
+import Views.VistaRecursos; 
 
 
 public class ControladorPrestamos implements ActionListener{
@@ -64,6 +66,7 @@ public class ControladorPrestamos implements ActionListener{
 
             int codigoUsario;
             int referenciaRecurso;
+
             
             try{
                 codigoUsario = Integer.parseInt(vistaPrestamos.txtUsuarioId.getText());
@@ -76,6 +79,7 @@ public class ControladorPrestamos implements ActionListener{
 
             ModeloUsuarios usuarioEncontrado = interfaceUsuariosDAO.getUsuarios(codigoUsario);
             ModeloRecursos recursoEncontrado = interfaceRecursosDAO.getRecursos(referenciaRecurso);
+
 
             if(usuarioEncontrado == null){
                 JOptionPane.showMessageDialog(null, "¡El Usuario no existe!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -98,12 +102,13 @@ public class ControladorPrestamos implements ActionListener{
 
                     String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
-                    modeloPrestamos.setCodigo(codigoUsario);
-                    modeloPrestamos.setIsbn(referenciaRecurso);
-                    modeloPrestamos.setEstado(estadoSelecionado);
-                    modeloPrestamos.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText());
-                    modeloPrestamos.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
-                    modeloPrestamos.setFechaLimite(vistaPrestamos.txtFechaLimite.getText());
+                    ModeloPrestamos nuevoPrestamo = new ModeloPrestamos("Estado", "Fecha Prestamo", "Fecha Devolucion", "Fecha Limite",0,0);
+                    nuevoPrestamo.setCodigo(codigoUsario);
+                    nuevoPrestamo.setIsbn(referenciaRecurso);
+                    nuevoPrestamo.setEstado(estadoSelecionado);
+                    nuevoPrestamo.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText());
+                    nuevoPrestamo.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
+                    nuevoPrestamo.setFechaLimite(vistaPrestamos.txtFechaLimite.getText());
 
                     //Vaciar Espacios
                     vistaPrestamos.txtUsuarioId.setText("");
@@ -115,7 +120,7 @@ public class ControladorPrestamos implements ActionListener{
                     JOptionPane.showMessageDialog(null, "¡El prestamos ha sido agregado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
 
-                    interfacePrestamosDAO.save(modeloPrestamos);
+                    interfacePrestamosDAO.save(nuevoPrestamo);
                 
                 }else{
                     JOptionPane.showMessageDialog(null, "¡Llene todos los campos para agregar el prestamo!", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -159,9 +164,11 @@ public class ControladorPrestamos implements ActionListener{
                             mensajeUsuario.append("  Fecha Prestamo: ").append(prestamo.getFechaPrestamo()).append("\n");
                             mensajeUsuario.append("  Fecha de devolucion: ").append(prestamo.getFechaDevolucion()).append("\n\n");
                             usuarioEnPrestamo = true;
+                            vistaPrestamos.mostrarPrestamos(prestamos);
                         }
                     }
-        
+                    
+
                     if (!usuarioEnPrestamo) {
                         mensajeUsuario.append("El usuario no tiene recursos prestados.");
                     }
@@ -256,32 +263,31 @@ public class ControladorPrestamos implements ActionListener{
         if(e.getSource() == vistaPrestamos.btnEliminar){
 
             int codigoUsario;
+            int referenciaRecurso;
 
-            try{
+            try {
                 codigoUsario = Integer.parseInt(vistaPrestamos.txtUsuarioId.getText());
-
-            }catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(null, "¡Llene el campo usuario(ID)!", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                referenciaRecurso = Integer.parseInt(vistaPrestamos.txtIsbnRrecurso.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "¡Llene los campos de Usuario(ID) y ISBN!", "Advertencia", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             ModeloUsuarios usuarioEncontrado = interfaceUsuariosDAO.getUsuarios(codigoUsario);
 
-            if(usuarioEncontrado == null){
-
+            if (usuarioEncontrado == null) {
                 JOptionPane.showMessageDialog(null, "¡El usuario no existe!", "Advertencia", JOptionPane.ERROR_MESSAGE);
-            }else{
-
+            } else {
                 List<ModeloPrestamos> prestamos = interfacePrestamosDAO.prestamos();
                 boolean prestamoEncontrado = false;
 
-                for(ModeloPrestamos prestamo : prestamos){
-                    if(prestamo.getCodigo() == codigoUsario){
+                for (ModeloPrestamos prestamo : prestamos) {
+                    if (prestamo.getCodigo() == codigoUsario && prestamo.getIsbn() == referenciaRecurso) {
                         prestamoEncontrado = true;
 
                         String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
-                        prestamo.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText()); 
+                        prestamo.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText());
                         prestamo.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
                         prestamo.setEstado(estadoSelecionado);
                         prestamo.setFechaLimite(vistaPrestamos.txtFechaLimite.getText());
@@ -294,15 +300,16 @@ public class ControladorPrestamos implements ActionListener{
                         vistaPrestamos.txtFechaDevolucion.setText("");
                         vistaPrestamos.txtFechaLimite.setText("");
 
-                        JOptionPane.showMessageDialog(null, "El prestamo ha sido eliminado", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "El préstamo ha sido eliminado", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     }
                 }
 
-                if(!prestamoEncontrado){
-                    JOptionPane.showMessageDialog(null, "¡No extiste el prestamo!", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                if (!prestamoEncontrado) {
+                    JOptionPane.showMessageDialog(null, "¡No existe el préstamo!", "Advertencia", JOptionPane.ERROR_MESSAGE);
                 }
             }
+
         }
 
     }

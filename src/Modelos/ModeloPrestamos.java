@@ -9,11 +9,13 @@ public class ModeloPrestamos {
     private int codigo;
     private int isbn;
 
-    public ModeloPrestamos(String estado, String FechaPrestamo, String FechaDevolucion, String FechaLimite) {
+    public ModeloPrestamos(String estado, String FechaPrestamo, String FechaDevolucion, String FechaLimite, int codigo, int isbn) {
         this.estado = estado;
         this.FechaPrestamo = FechaPrestamo;
         this.FechaDevolucion = FechaDevolucion;
         this.FechaLimite= FechaLimite;
+        this.codigo = codigo;
+        this.isbn = isbn;
     }
     
     public String getEstado() {
@@ -67,6 +69,6 @@ public class ModeloPrestamos {
 
     @Override
     public String toString() {
-        return "Codigo: " + codigo + ", ISBN: " + isbn + ", Estado: " + estado + ", Dias Prestamo: " + FechaPrestamo + ", Fecha De Devolucion: " + FechaDevolucion;
+        return "Codigo: " + codigo + ", ISBN: " + isbn + ", Estado: " + estado + ", Fecha Prestamo: " + FechaPrestamo + ", Fecha De Devolucion: " + FechaDevolucion + ", Fecha Limite: " + FechaLimite; 
     }
 }

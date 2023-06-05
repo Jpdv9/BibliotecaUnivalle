@@ -1,6 +1,10 @@
 
 package Views;
 
+import java.util.List;
+
+import Modelos.ModeloPrestamos;
+
 /**
  *
  * @author Franklin Aguirre
@@ -242,4 +246,13 @@ public class VistaPrestamos extends javax.swing.JFrame {
     public javax.swing.JTextField txtIsbnRrecurso;
     public javax.swing.JTextField txtUsuarioId;
     // End of variables declaration//GEN-END:variables
+
+    public void mostrarPrestamos(List<ModeloPrestamos> prestamos){
+        jTextArea1.setText("");
+
+        for(ModeloPrestamos prestamo : prestamos){
+            jTextArea1.append(prestamo.toString() + "\n");
+        }
+
+    }
 }

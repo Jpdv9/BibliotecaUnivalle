@@ -96,6 +96,7 @@ public class ControladorUsuarios implements ActionListener{
                     JOptionPane.showMessageDialog(null, "¡El usuario no esta registrado!", "Advertencia", JOptionPane.ERROR_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(null, "¡El usuario esta registrado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                    vistaUsuarios.mostrarUsuarioBuscado(usuarioEncontrado);
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Digite el numero de identificación", "Advertencia", JOptionPane.ERROR_MESSAGE);

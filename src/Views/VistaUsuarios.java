@@ -233,5 +233,9 @@ public class VistaUsuarios extends javax.swing.JFrame {
             jTextArea1.append(usuario.toString() + "\n");
         }
     }
+
+    public void mostrarUsuarioBuscado(ModeloUsuarios usuario){
+        jTextArea1.setText(usuario.toString());
+    }
 }
 
