@@ -14,6 +14,7 @@ import Views.VistaMenu;
 import Views.VistaPrestamos;
 import Views.VistaRecursos;
 import Views.VistaUsuarios;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,7 +39,7 @@ public class ControladorMenu implements ActionListener{
         this.vistaMenu.btnUsuarios.addActionListener(this);
         this.vistaMenu.btnRecursos.addActionListener(this);
         this.vistaMenu.btnPrestamos.addActionListener(this);
-
+        this.vistaMenu.btnSalir.addActionListener(this);
         //Vista Usuario
         this.vistaUsuarios = new VistaUsuarios();
         this.modeloUsuarios = new ModeloUsuarios("Nombre", "Dependencia", "Estamento", 0);
@@ -80,5 +81,20 @@ public class ControladorMenu implements ActionListener{
             ControladorPrestamos controladorPrestamos = new ControladorPrestamos(vistaPrestamos, vistaMenu, modeloPrestamos);
             controladorPrestamos.iniciar();
         }
+        
+        if(e.getSource() == vistaMenu.btnSalir){
+            int respuesta;
+
+                respuesta = JOptionPane.showConfirmDialog(
+                            null,"¿Quieres terminar el juego?", "Advertencia",
+                            JOptionPane.YES_NO_OPTION, 
+                            JOptionPane.WARNING_MESSAGE);
+                if(respuesta == JOptionPane.YES_OPTION){
+                    this.vistaMenu.dispose();
+                }
+            
+            
+        }
+        
     }
 }

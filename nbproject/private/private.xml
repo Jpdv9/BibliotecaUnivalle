@@ -3,10 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jeanp/OneDrive/Documents/NetBeansProjects/BibliotecaUnivalle/src/Controladores/ControladorRecursos.java</file>
-            <file>file:/C:/Users/jeanp/OneDrive/Documents/NetBeansProjects/BibliotecaUnivalle/src/Repositorio/ImplemetacionUsuariosDAO.java</file>
-            <file>file:/C:/Users/jeanp/OneDrive/Documents/NetBeansProjects/BibliotecaUnivalle/src/Views/VistaUsuarios.java</file>
-            <file>file:/C:/Users/jeanp/OneDrive/Documents/NetBeansProjects/BibliotecaUnivalle/src/Controladores/ControladorIniciarSesion.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaIniciarSesion.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/ImplementacionIniciarSesionDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/ImplementacionPrestamosDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/ModeloPrestamos.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/ModeloUsuarios.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/InterfaceUsuariosDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorRecursos.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorPrestamos.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorUsuarios.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/ImplemetacionUsuariosDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/FondoIniciarSesion.jpg</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaRecursos.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/FondoPrestamos.png</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/IMAGENES/FondoMenu.png</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/ModeloIniciarSesion.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/InterfaceIniciarSesionDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/Main.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Modelos/ModeloRecursos.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorIniciarSesion.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Controladores/ControladorMenu.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaUsuarios.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/ImplementacionRecursosDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Colecciones/InterfaceRecursosDAO.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaMenu.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/Fondo.java</file>
+            <file>file:/C:/Users/Franklin%20Aguirre/Desktop/BibliotecaUnivalle/src/Views/VistaPrestamos.java</file>
         </group>
     </open-files>
 </project-private>
