@@ -3,15 +3,17 @@ package Modelos;
 public class ModeloPrestamos {
     
     private String estado;
-    private String DiasPrestamo;
+    private String FechaPrestamo;
     private String FechaDevolucion;
+    private String FechaLimite;
     private int codigo;
     private int isbn;
 
-    public ModeloPrestamos(String estado, String DiasPrestamo, String FechaDevolucion) {
+    public ModeloPrestamos(String estado, String FechaPrestamo, String FechaDevolucion, String FechaLimite) {
         this.estado = estado;
-        this.DiasPrestamo = DiasPrestamo;
+        this.FechaPrestamo = FechaPrestamo;
         this.FechaDevolucion = FechaDevolucion;
+        this.FechaLimite= FechaLimite;
     }
     
     public String getEstado() {
@@ -21,14 +23,14 @@ public class ModeloPrestamos {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    public String getDiasPrestamo() {
-        return DiasPrestamo;
+    public String getFechaPrestamo() {
+        return FechaPrestamo;
     }
 
-    public void setDiasPrestamo(String DiasPrestamo) {
-        this.DiasPrestamo = DiasPrestamo;
+    public void setFechaPrestamo(String FechaPrestamo) {
+        this.FechaPrestamo = FechaPrestamo;
     }
+
 
     public String getFechaDevolucion() {
         return FechaDevolucion;
@@ -37,7 +39,15 @@ public class ModeloPrestamos {
     public void setFechaDevolucion(String FechaDevolucion) {
         this.FechaDevolucion = FechaDevolucion;
     }
+    
+    public String getFechaLimite() {
+        return FechaLimite;
+    }
 
+    public void setFechaLimite(String FechaLimite) {
+        this.FechaLimite = FechaLimite;
+    }
+    
     public int getCodigo(){
         return codigo;
     }
@@ -57,6 +67,6 @@ public class ModeloPrestamos {
 
     @Override
     public String toString() {
-        return "Codigo: " + codigo + ", ISBN: " + isbn + ", Estado: " + estado + ", Dias Prestamo: " + DiasPrestamo + ", Fecha De Devolucion: " + FechaDevolucion;
+        return "Codigo: " + codigo + ", ISBN: " + isbn + ", Estado: " + estado + ", Dias Prestamo: " + FechaPrestamo + ", Fecha De Devolucion: " + FechaDevolucion;
     }
 }

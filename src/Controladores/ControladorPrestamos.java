@@ -101,14 +101,16 @@ public class ControladorPrestamos implements ActionListener{
                     modeloPrestamos.setCodigo(codigoUsario);
                     modeloPrestamos.setIsbn(referenciaRecurso);
                     modeloPrestamos.setEstado(estadoSelecionado);
-                    modeloPrestamos.setDiasPrestamo(vistaPrestamos.txtFechaPrestamo.getText());
+                    modeloPrestamos.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText());
                     modeloPrestamos.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
+                    modeloPrestamos.setFechaLimite(vistaPrestamos.txtFechaLimite.getText());
 
                     //Vaciar Espacios
                     vistaPrestamos.txtUsuarioId.setText("");
                     vistaPrestamos.txtIsbnRrecurso.setText("");
                     vistaPrestamos.txtFechaPrestamo.setText("");
                     vistaPrestamos.txtFechaDevolucion.setText("");
+                    vistaPrestamos.txtFechaLimite.setText("");
 
                     JOptionPane.showMessageDialog(null, "¡El prestamos ha sido agregado!", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
@@ -154,7 +156,7 @@ public class ControladorPrestamos implements ActionListener{
                             mensajeUsuario.append("- Codigo: ").append(prestamo.getCodigo()).append("\n");
                             mensajeUsuario.append("  ISBN: ").append(prestamo.getIsbn()).append("\n");
                             mensajeUsuario.append("  Estado: ").append(prestamo.getEstado()).append("\n");
-                            mensajeUsuario.append("  Dias prestado: ").append(prestamo.getDiasPrestamo()).append("\n");
+                            mensajeUsuario.append("  Fecha Prestamo: ").append(prestamo.getFechaPrestamo()).append("\n");
                             mensajeUsuario.append("  Fecha de devolucion: ").append(prestamo.getFechaDevolucion()).append("\n\n");
                             usuarioEnPrestamo = true;
                         }
@@ -228,9 +230,10 @@ public class ControladorPrestamos implements ActionListener{
 
                         String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
-                        prestamo.setDiasPrestamo(vistaPrestamos.txtFechaPrestamo.getText()); 
+                        prestamo.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText()); 
                         prestamo.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
                         prestamo.setEstado(estadoSelecionado);
+                        prestamo.setFechaLimite(vistaPrestamos.txtFechaLimite.getText());
 
                         interfacePrestamosDAO.update(prestamo);
 
@@ -238,6 +241,7 @@ public class ControladorPrestamos implements ActionListener{
                         vistaPrestamos.txtIsbnRrecurso.setText("");
                         vistaPrestamos.txtFechaPrestamo.setText("");
                         vistaPrestamos.txtFechaDevolucion.setText("");
+                        vistaPrestamos.txtFechaLimite.setText("");
                         JOptionPane.showMessageDialog(null, "El prestamo fue actualizado", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     }
@@ -277,9 +281,10 @@ public class ControladorPrestamos implements ActionListener{
 
                         String estadoSelecionado = (String) vistaPrestamos.cmbEstado.getSelectedItem();
 
-                        prestamo.setDiasPrestamo(vistaPrestamos.txtFechaPrestamo.getText()); 
+                        prestamo.setFechaPrestamo(vistaPrestamos.txtFechaPrestamo.getText()); 
                         prestamo.setFechaDevolucion(vistaPrestamos.txtFechaDevolucion.getText());
                         prestamo.setEstado(estadoSelecionado);
+                        prestamo.setFechaLimite(vistaPrestamos.txtFechaLimite.getText());
 
                         interfacePrestamosDAO.delete(prestamo);
 
@@ -287,6 +292,7 @@ public class ControladorPrestamos implements ActionListener{
                         vistaPrestamos.txtIsbnRrecurso.setText("");
                         vistaPrestamos.txtFechaPrestamo.setText("");
                         vistaPrestamos.txtFechaDevolucion.setText("");
+                        vistaPrestamos.txtFechaLimite.setText("");
 
                         JOptionPane.showMessageDialog(null, "El prestamo ha sido eliminado", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                         break;

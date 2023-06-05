@@ -51,7 +51,7 @@ public class ControladorMenu implements ActionListener{
 
         //Vista Prestamos
         this.vistaPrestamos = new VistaPrestamos();
-        this.modeloPrestamos = new ModeloPrestamos("","","");
+        this.modeloPrestamos = new ModeloPrestamos("","","","");
     }
 
     public void iniciar() {
