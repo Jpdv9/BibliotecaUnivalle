@@ -65,7 +65,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtDiasPrestamo" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="txtFechaPrestamo" min="-2" pref="85" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jlbfechas" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -116,7 +116,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDiasPrestamo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtFechaPrestamo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jlbfechas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtFechaLimite" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -197,7 +197,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDiasPrestamo">
+    <Component class="javax.swing.JTextField" name="txtFechaPrestamo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>

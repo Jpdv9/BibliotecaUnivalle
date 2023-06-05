@@ -30,7 +30,7 @@ public class VistaPrestamos extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtUsuarioId = new javax.swing.JTextField();
         txtIsbnRrecurso = new javax.swing.JTextField();
-        txtDiasPrestamo = new javax.swing.JTextField();
+        txtFechaPrestamo = new javax.swing.JTextField();
         cmbEstado = new javax.swing.JComboBox<>();
         btnAgregar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
@@ -62,7 +62,7 @@ public class VistaPrestamos extends javax.swing.JFrame {
 
         txtIsbnRrecurso.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
-        txtDiasPrestamo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtFechaPrestamo.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         cmbEstado.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abierto", "Parcialmente cerrado", "Completamente cerrado" }));
@@ -156,7 +156,7 @@ public class VistaPrestamos extends javax.swing.JFrame {
                                         .addComponent(txtFechaDevolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtDiasPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtFechaPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jlbfechas)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -193,7 +193,7 @@ public class VistaPrestamos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtDiasPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFechaPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbfechas)
                     .addComponent(txtFechaLimite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -236,9 +236,9 @@ public class VistaPrestamos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jlbfechas;
-    public javax.swing.JTextField txtDiasPrestamo;
     public javax.swing.JTextField txtFechaDevolucion;
     public javax.swing.JTextField txtFechaLimite;
+    public javax.swing.JTextField txtFechaPrestamo;
     public javax.swing.JTextField txtIsbnRrecurso;
     public javax.swing.JTextField txtUsuarioId;
     // End of variables declaration//GEN-END:variables

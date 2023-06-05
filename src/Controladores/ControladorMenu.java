@@ -86,7 +86,7 @@ public class ControladorMenu implements ActionListener{
             int respuesta;
 
                 respuesta = JOptionPane.showConfirmDialog(
-                            null,"¿Quieres terminar el juego?", "Advertencia",
+                            null,"¿Quieres salir de la Apliacion?", "Advertencia",
                             JOptionPane.YES_NO_OPTION, 
                             JOptionPane.WARNING_MESSAGE);
                 if(respuesta == JOptionPane.YES_OPTION){
