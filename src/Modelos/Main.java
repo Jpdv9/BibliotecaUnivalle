@@ -5,12 +5,15 @@ import Colecciones.ImplementacionIniciarSesionDAO;
 import Colecciones.InterfaceIniciarSesionDAO;
 import Controladores.ControladorIniciarSesion;
 import Views.VistaIniciarSesion;
-
-
-
-/**
- *
- * @author jeanp
+/*
+ * EN ESTA LINEA UBICAMOS EL LINK AL VIDEO DEL FUNCIONAMIENTO /
+ * *se añade link del video aqui*
+ * VIDEO:
+ * su nombre es MiniProyecto2
+ * https://drive.google.com/drive/folders/18D3aBNtPlwAYa2xn9bUV2pQJ0CXMbYw2?usp=share_link
+ * AUTORES
+ * FRANKLIN AGUIRRE ORTIZ 201841743
+ * JEAN PAUL DAVALOS VALENCIA 201832375
  */
 public class Main {
     /**
